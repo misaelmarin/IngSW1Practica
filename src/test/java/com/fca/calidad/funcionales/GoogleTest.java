@@ -19,7 +19,7 @@ public class GoogleTest {
 
   @Before
   public void setUp() throws Exception {
-	  System.setProperty("Webdriver.chrome.driver","C:\\Users\\MisaelME\\Documents\\ChromeDriver\\chromedriver");
+	  System.setProperty("webdriver.chrome.driver", "C:/Users/MisaelME/Documents/ChromeDriver/chromedriver.exe");
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -31,7 +31,8 @@ public class GoogleTest {
     driver.findElement(By.name("q")).clear();
     driver.findElement(By.name("q")).sendKeys("hola");
     driver.findElement(By.xpath("(//input[@name='btnK'])[2]")).click();
-    // ERROR: Caught exception [unknown command []]
+    driver.findElement(By.xpath("//div[@id='rso']/div/div/div/div/a/h3")).click();
+    assertEquals("https://mx.hola.com/", driver.getCurrentUrl());
   }
 
   @After
@@ -76,3 +77,4 @@ public class GoogleTest {
     }
   }
 }
+
