@@ -44,7 +44,7 @@ public class BorrarTest {
     driver.findElement(By.xpath("//div[3]/button")).click();
     driver.findElement(By.xpath("//body")).click();
     // Warning: assertTextNotPresent may require manual changes
-    assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*ui[\\s\\S]*$"));
+    assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*prueba2[\\s\\S]*$"));
   }
 
   @After

@@ -40,11 +40,9 @@ public class AgregarTest {
     driver.findElement(By.xpath("//div[2]/div/div[2]/div")).click();
     driver.findElement(By.xpath("//form/button")).click();
     driver.findElement(By.xpath("//div[2]")).click();
-    String valorEsperado = "https://mern-crud.herokuapp.com/";
-    String resultadoEjecucion = driver.getCurrentUrl();
-    assertEquals(valorEsperado, resultadoEjecucion);
+    // Warning: assertTextNotPresent may require manual changes
+    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Successfully added![\\s\\S]*$"));
   }
-
   @After
   public void tearDown() throws Exception {
     driver.quit();

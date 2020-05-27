@@ -49,7 +49,8 @@ public class ModificarTest {
     driver.findElement(By.xpath("//form/button")).click();
     driver.findElement(By.xpath("//div[2]")).click();
     // Warning: assertTextNotPresent may require manual changes
-    assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Nice one! Successfully updated![\\s\\S]*$"));
+    TimeUnit.SECONDS.sleep(5);
+    assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Successfully updated![\\s\\S]*$"));
   }
 
   @After
